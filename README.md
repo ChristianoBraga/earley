@@ -30,7 +30,9 @@ O módulo `earley` deve conter ao menos as seguintes funções:
 ## Execução
 
 ```
-Mon Apr 05@17:24:37:earley$ python3 driver.py anbn.grm aabb
+$ pip3 install anytree –-user
+
+$ python3 driver.py anbn.grm aabb
 AnyNode(root='S')
 ├── AnyNode(root='a')
 ├── AnyNode(root='S')
