@@ -1,4 +1,4 @@
-# Algoritmo de reconhecimento de Erley
+# Algoritmo de reconhecimento de Earley
 
 Christiano Braga
 
