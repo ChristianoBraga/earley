@@ -10,7 +10,7 @@ Data de entrega: 07/05/2021
 
 Implementar em Python 3 o algoritmo de reconhecimento de Earley.
 
-O programa deve receber uma gramática livre de contexto, uma palavra e identificar se a palavra dada pertence ou não a linguagem gerada pela gramática dada. Caso pertença, deve imprimir a árvore sintática associada a palavrada dada. Caso contrário, deve mostrar em qual ponto da construção da derivação não foi possível continuar.
+O programa deve receber uma gramática livre de contexto, uma palavra e identificar se a palavra dada pertence ou não a linguagem gerada pela gramática dada. Caso pertença, deve imprimir a árvore sintática associada a palavra dada. Caso contrário, deve mostrar em qual ponto da construção da derivação não foi possível continuar.
 
 ## Implementação
 
@@ -19,7 +19,7 @@ A implementação deste trabalho deve conter ao menos 2 módulos: `driver` e `ea
 A linha de comando da chamada do programa deverá receber dois parâmetros: (i) o nome de um arquivo texto contendo a descrição de uma gramática livre de contexto e (ii) a palavra a ser analisada, como por exemplo `python3 driver.py anbn.grm aabb`.
 
 O módulo `earley` deve conter ao menos as seguintes funções:
-1. `parse : GLC String -> Derivation`. Esta função recebe uma gramática livre de contexto, uma string, e retorna uma derivação completa (até o símbolo inicial) se a string dada pertercer à linguagem derivada pela gramática, ou incompleta caso contrário.
+1. `parse : GLC String -> Derivation`. Esta função recebe uma gramática livre de contexto, uma string, e retorna uma derivação.
 1. `printDerivation : Derivation -> Tree`. Esta função recebe uma
    derivação e retorna uma árvore sintática, possivelmente mal-formada
    se a derivação for incompleta. O tipo `Tree` pode ser implementado
@@ -29,9 +29,13 @@ O módulo `earley` deve conter ao menos as seguintes funções:
 
 ## Execução
 
+- Requirement:
 ```
 $ pip3 install anytree –-user
+```
 
+- Chamada do programa:
+```
 $ python3 driver.py anbn.grm aabb
 AnyNode(root='S')
 ├── AnyNode(root='a')
