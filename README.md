@@ -20,7 +20,21 @@ A linha de comando da chamada do programa deverá receber dois parâmetros: (i) 
 
 O módulo `earley` deve conter ao menos as seguintes funções:
 1. `parse : GLC String -> Derivation`. Esta função recebe uma gramática livre de contexto, uma string, e retorna uma derivação completa (até o símbolo inicial) se a string dada pertercer à linguagem derivada pela gramática, ou incompleta caso contrário.
-1. `printDerivation : Derivation -> Tree`. Esta função recebe uma derivação e retorna uma árvore sintática, possivelmente mal-formada se a derivação for incompleta. O tipo `Tree` pode ser implementado completamente ou através de algum tipo existente em Python como um dicionário.
+1. `printDerivation : Derivation -> Tree`. Esta função recebe uma
+   derivação e retorna uma árvore sintática, possivelmente mal-formada
+   se a derivação for incompleta. O tipo `Tree` pode ser implementado
+   completamente ou através de algum tipo existente em Python como um
+   dicionário (com dicionários aninhados).
 1. `parseGrm : String -> dict`. Esta função recebe uma string e retorna um dicionário representando a gramática descrita na string dada. A string deve ser da forma `V -> alpha`, onde `V` é uma variável (não-terminal) e alpha é uma palavra composta por símbolos variáveis e terminais separados por `.`. Por exemplo, a gramática `S -> a.S.b | epsilon` dá origem ao dicionário `{ "S" : [["a", "S", "b"], ["epsilon"]] }`. Produções podem ser separadas por quebra de linha, como por exemplo `S -> a.S.b\nS -> epsilon".
 
+## Execução
 
+```
+Mon Apr 05@17:24:37:earley$ python3 driver.py anbn.grm aabb
+AnyNode(root='S')
+├── AnyNode(root='a')
+├── AnyNode(root='S')
+│   ├── AnyNode(root='a')
+│   └── AnyNode(root='b')
+└── AnyNode(root='b')
+```
