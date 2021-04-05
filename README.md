@@ -25,7 +25,7 @@ O módulo `earley` deve conter ao menos as seguintes funções:
    se a derivação for incompleta. O tipo `Tree` pode ser implementado
    completamente ou através de algum tipo existente em Python como um
    dicionário (com dicionários aninhados).
-1. `parseGrm : String -> dict`. Esta função recebe uma string e retorna um dicionário representando a gramática descrita na string dada. A string deve ser da forma `V -> alpha`, onde `V` é uma variável (não-terminal) e alpha é uma palavra composta por símbolos variáveis e terminais separados por `.`. Por exemplo, a gramática `S -> a.S.b | epsilon` dá origem ao dicionário `{ "S" : [["a", "S", "b"], ["epsilon"]] }`. Produções podem ser separadas por quebra de linha, como por exemplo `S -> a.S.b\nS -> epsilon".
+1. `parseGrm : String -> dict`. Esta função recebe uma string e retorna um dicionário representando a gramática descrita na string dada. A string deve ser da forma `V -> alpha`, onde `V` é uma variável (não-terminal) e alpha é uma palavra composta por símbolos variáveis e terminais separados por `.`. Por exemplo, a gramática `S -> a.S.b | epsilon` dá origem ao dicionário `{ "S" : [["a", "S", "b"], ["epsilon"]] }`. Produções podem ser separadas por quebra de linha, como por exemplo `S -> a.S.b\nS -> epsilon`.
 
 ## Execução
 
